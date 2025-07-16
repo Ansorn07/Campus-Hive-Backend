@@ -3,7 +3,7 @@
 **CampusHive** is a scalable and robust back-end API powering an intuitive ed-tech platform for modern learning environments. It supports course management, secure user authentication, payment integration, media handling, and more — all developed using the **MERN** stack and deployed on scalable cloud infrastructure.
 
 ---
-
+ 
 ## 🚀 Tech Stack
 
 - **Node.js** – JavaScript runtime for building scalable backend services
