@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variable files
+.env
+.env.*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache directory
+.npm
+
+# Build directories
+dist/
+build/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# VSCode settings
+.vscode/
+
+# Debug folder
+debug.log
+
+# MongoDB dump
+dump/
+
+# Other potentially unwanted folders
+*.tgz
+*.tar.gz
+.idea/
