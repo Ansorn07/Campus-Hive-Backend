@@ -123,7 +123,7 @@ exports.deleteSubSection = async (req,res) =>{
       return res.json({
         success: true,
         data:updatedSection,
-        message: "SubSection deleted successfully",
+        message: "SubSection removed successfully",
       })
     } catch (error) {
         console.error(error);
