@@ -18,8 +18,6 @@ const { auth } = require("../middlewares/auth")
 
 // Routes for Login, Signup, and Authentication
 
-//Authentication routes
-
 
 // Route for user login
 router.post("/login", login)
