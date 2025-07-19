@@ -303,8 +303,8 @@ exports.sendPaymentSuccessEmail = async (req,res) => {
 
 //             const emailResponse = await mailSender(
 //                                                     updatedStudent.email,
-//                                                     "Thankyou for buying - StudyNotion",
-//                                                     "You have successfully bought Study Notion Course"
+//                                                     "Thankyou for buying - CampusHive",
+//                                                     "You have successfully bought  CampusHive Course"
 //             )
 
 //             console.log(emailResponse);
