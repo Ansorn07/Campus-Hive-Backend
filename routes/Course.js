@@ -40,7 +40,7 @@ const {
 
 // Rating Controllers Import
 const {
-  createRating,
+  createRatng,
   getAverageRating,
   getAllRating,
 } = require("../controllers/RatingAndReview")
