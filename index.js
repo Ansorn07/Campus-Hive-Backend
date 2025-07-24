@@ -25,10 +25,11 @@ database.connectDB();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.usecors({
-  origin: ["https://campus-hive-frontend.vercel.app"],
+app.usecorscors({
+  origin: ["http://localhost:3000", "https://campus-hive-frontend.vercel.app"],
   credentials: true,
 });
+
 
 
 // ✅ File upload middleware (only once)
