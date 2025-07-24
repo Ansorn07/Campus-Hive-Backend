@@ -109,8 +109,7 @@ exports.signUp = async (req, res) => {
     }
 
     const hashedPwd = await bcrypt.hash(password, 10);
-
-    let approved = accountType === "Instructor" ? false : true;
+    const approved = accountType === "Instructor" ? false : true;
 
     const profileDetails = await Profile.create({
       gender: null,
@@ -187,10 +186,10 @@ exports.login = async (req, res) => {
     existingUser.password = undefined;
 
     const options = {
-      expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
       httpOnly: true,
-      secure: true,          // ✅ required on HTTPS (Vercel)
-      sameSite: "None",      // ✅ allows cross-site cookie
+      secure: true,         // ✅ HTTPS-only cookie
+      sameSite: "None",     // ✅ required for cross-origin
+      expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
     };
 
     return res.cookie("token", token, options).status(200).json({
