@@ -5,7 +5,9 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
+const serverless = require("serverless-http"); // ✅ required for Vercel
 
+// Routes
 const userRoutes = require("./routes/User");
 const profileRoutes = require("./routes/Profile");
 const paymentRoutes = require("./routes/Payments");
@@ -14,14 +16,13 @@ const courseRoutes = require("./routes/Course");
 const database = require("./config/database");
 const { cloudinaryConnect } = require("./config/cloudinary");
 
-// Load environment variables
+// Load env
 dotenv.config();
-const PORT = process.env.PORT || 4000;
 
-// Connect to database
+// DB connect
 database.connectDB();
 
-// Middlewares
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -34,8 +35,6 @@ app.use(
     credentials: true,
   })
 );
-
-// ✅ File upload middleware (only once)
 app.use(
   fileUpload({
     useTempFiles: true,
@@ -43,7 +42,7 @@ app.use(
   })
 );
 
-// Connect to Cloudinary
+// Cloudinary
 cloudinaryConnect();
 
 // Routes
@@ -52,15 +51,13 @@ app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 
-// Default route
 app.get("/", (req, res) => {
   return res.json({
     success: true,
-    message: "Your server is up and running....",
+    message: "Your serverless Express API is up and running!",
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`App is running at ${PORT}`);
-});
+// ✅ Export handler for Vercel
+module.exports = app;
+module.exports.handler = serverless(app); // ✅ This is what Vercel will call
