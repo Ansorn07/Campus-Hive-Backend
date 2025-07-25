@@ -70,7 +70,7 @@
 
 | Service     | Purpose                    |
 |-------------|----------------------------|
-| **Railway/Render** | Backend hosting (Node.js + MongoDB) |
+| **Vercel** | Backend hosting (Node.js + MongoDB) |
 | **MongoDB Atlas** | Cloud-hosted database       |
 | **Cloudinary**     | Media content hosting       |
 | **Vercel**         | Frontend (React) hosting *(see frontend repo)* |
